@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="include" displayName="include" projectFiles="true">
+      <itemPath>include/Promise.h</itemPath>
+      <itemPath>include/TransactionManager.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="src" displayName="src" projectFiles="true">
+      <itemPath>src/Promise.cpp</itemPath>
+      <itemPath>src/TransactionManager.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f1" displayName="test" projectFiles="true" kind="TEST">
+        <itemPath>tests/EventEmitter.h</itemPath>
+        <itemPath>tests/json.hpp</itemPath>
+        <itemPath>tests/main.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>include</Elem>
+    <Elem>src</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="2">
+      <toolsSet>
+        <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <stripSymbols>true</stripSymbols>
+          <standard>11</standard>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>tests</pElem>
+          </incDir>
+        </ccTool>
+      </compileType>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+        </linkerTool>
+      </folder>
+      <item path="include/Promise.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/TransactionManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Promise.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TransactionManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/EventEmitter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/json.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="2">
+      <toolsSet>
+        <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <standard>11</standard>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>tests</pElem>
+          </incDir>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+        </linkerTool>
+      </folder>
+      <item path="include/Promise.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/TransactionManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Promise.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TransactionManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/EventEmitter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/json.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
