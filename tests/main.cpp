@@ -65,10 +65,10 @@ int main(int argc, char** argv)
 		printf("t1::command accepted");
 	});
 
-	printf("t1::sending reject cmd");
+	printf("t1::sending reject cmd\r\n");
 	auto reject = tm1.command("reject");
 	reject->onrejected([](const json& data){
-		printf("t1::command rejected");
+		printf("t1::command rejected\r\n");
 	});
 
 	auto ns1 = tm1.ns("ns");
@@ -83,13 +83,13 @@ int main(int argc, char** argv)
 		printf("ns2::got event %s\r\n", event->getName().c_str());
 	});
 
-	printf("ns1::sending test_namespace cmd");
+	printf("ns1::sending test_namespace cmd\r\n");
 	auto cmd2 = ns1->command("test_namespace", {{ "dummy", 1}});
 	cmd2->onaccepted([](const json& data){
 		printf("ns1::command accepted");
 	});
 	
-	printf("ns1::sending test_namespace event");
+	printf("ns1::sending test_namespace event\r\n");
 	ns1->event("test_namespace", {{ "evt", 1}});
 	ns1->event("test_namespace_empty_event");
 	return 0;

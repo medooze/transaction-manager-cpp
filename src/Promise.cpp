@@ -17,7 +17,7 @@ using namespace medooze;
 
 std::function<void (const nlohmann::json& data)> Promise::noop = [](const nlohmann::json& data){};
 
-Promise& Promise::onaccepted(std::function<void (const nlohmann::json& data)> callback) 
+Promise& Promise::onaccepted(const std::function<void (const nlohmann::json& data)> &callback) 
 { 
 	switch (state)
 	{
@@ -37,7 +37,7 @@ Promise& Promise::onaccepted(std::function<void (const nlohmann::json& data)> ca
 	return *this;
 }
 
-Promise& Promise::onrejected(std::function<void (const nlohmann::json& data)> callback)
+Promise& Promise::onrejected(const std::function<void (const nlohmann::json& data)> &callback)
 {
 	switch (state)
 	{
