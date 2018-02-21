@@ -92,7 +92,7 @@ bool TransactionManager::handle(const std::string &str)
 			//Get transaction
 			auto it = transactions.find(transId);
 			//Check if fuound
-			if (it!=transactions.end())
+			if (it==transactions.end())
 				return false;
 			//Get transaction
 			auto transaction = it->second;
@@ -107,7 +107,7 @@ bool TransactionManager::handle(const std::string &str)
 			//Get transaction
 			auto it = transactions.find(transId);
 			//Check if fuound
-			if (it!=transactions.end())
+			if (it==transactions.end())
 				return false;
 			//Get transaction
 			auto transaction = it->second;
