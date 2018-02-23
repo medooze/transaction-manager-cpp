@@ -16,6 +16,16 @@
 using namespace nlohmann;
 using namespace medooze;
 
+TransactionManager::TransactionManager(Transport& transport) :
+	transport(transport)
+{
+	//Set message listener
+	transport.onmessage([this](const std::string& message){
+		//Handle it
+		return this->handle(message);
+	});
+}
+
 bool TransactionManager::handle(const std::string &str)
 {
 	//Process message

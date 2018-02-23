@@ -97,16 +97,14 @@ public:
 	{
 	public:
 		virtual void send(const std::string& message) = 0;
+		virtual void onmessage(const std::function<bool (const std::string& message)>& callback) = 0;
 	};
 public:
-	TransactionManager(Transport& transport) : 
-		transport(transport)
-	{}
-	
+	TransactionManager(Transport& transport);
 	Promise::shared   command(const std::string& name, nlohmann::json data = nlohmann::json(), const std::string& ns = "");
 	void		  event(const std::string& name, nlohmann::json data = nlohmann::json(), const std::string& ns = "");
 	Namespace::shared ns(const std::string &name);
-	
+private:	
 	bool handle(const std::string& message);
 private:
 	uint64_t maxTransId = 0;
